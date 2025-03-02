@@ -9,11 +9,12 @@ Checking the processor and memory load of the container and notifying you when t
 # Prerequisits
 
 - docker
+- screen
 - curl
 - bc
 - jq
-- Telegram bot token, telegram chat id
+- telegram bot token, telegram chat id
 
 # Can control
-- Shardeum with CLI status monitoring and restart
+- Shardeum node with CLI status monitoring and restart
 - Any other nodes (containers) running in Docker 
