@@ -65,11 +65,17 @@ typewriter() {
 echo -e " "
 echo -e " "
 
-# Проверка первого запуска
-if [ ! -f ~/.script_initialized ]; then
+# Удаляем старый файл инициализации, если он существует
+if [ -f ~/.script_initialized ]; then
+    rm ~/.script_initialized
+fi
+
+# Проверка первого запуска (новая версия)
+if [ ! -f ~/.2nd_script_initialized ]; then
     # Вывод анимированных сообщений
     typewriter "${YELLOW}$(t "Hello!" "Привет!")${NC}" 0.05
     echo -e " "
+    typewriter "${YELLOW}$(t "This is the ${MAGENTA}second version${YELLOW} of the script!" "Это ${MAGENTA}вторая версия${YELLOW} скрипта!")${NC}" 0.03
     typewriter "${YELLOW}$(t "I will help you create a script that will allow you to ${GREEN}sleep${NC}${YELLOW} instead of sitting in the terminal." "Я помогу тебе создать скрипт, который даст тебе возможность ${GREEN}спать${NC}${YELLOW}, а не сидеть в терминале.")${NC}" 0.03
     typewriter "${YELLOW}$(t "This script can also register an ${BLUE}Aztec${NC}${YELLOW} validator." "Еще этот скрипт умеет регистрировать валидатора ${BLUE}Aztec.${NC}")${NC}" 0.03
     typewriter "${RED}$(t "But not like that unfortunate first script on GitHub..." "Но не как тот несчастный, первый скрипт в Гитхабе...")${NC}" 0.03
@@ -85,12 +91,12 @@ if [ ! -f ~/.script_initialized ]; then
     typewriter "${GREEN}$(t "Thanks to my author for this!" "За это моему автору спасибо!")${NC}" 0.05
     echo -e " "
     typewriter "${YELLOW}$(t "If you want to thank the author, here are the wallets:" "Если хочешь отблагодарить автора, то вот кошельки:")${NC}" 0.03
-    typewriter "${BLUE}     EVM: ${MAGENTA}0x4FD5eC033BA33507E2dbFE57ca3ce0A6D70b48Bf${NC}" 0.01
-    typewriter "${BLUE}     SOLANA: ${MAGENTA}C9TV7Q4N77LrKJx4njpdttxmgpJ9HGFmQAn7GyDebH4R${NC}" 0.01
+    typewriter "${BLUE}     EVM: ${MAGENTA}0x4FD5eC033BA33507E2dbFE57ca3ce0A6D70b48Bf${NC}" 0.03
+    typewriter "${BLUE}     SOLANA: ${MAGENTA}C9TV7Q4N77LrKJx4njpdttxmgpJ9HGFmQAn7GyDebH4R${NC}" 0.03
     echo -e " "
-    typewriter "${NC}$(t "Now, let's get started..." "Ну а теперь, давай приступим...")${NC}" 0.01
+    typewriter "${NC}$(t "Now, let's get started..." "Ну а теперь, давай приступим...")${NC}" 0.03
 
-    touch ~/.script_initialized
+    touch ~/.2nd_script_initialized
     echo ""
 fi
 
