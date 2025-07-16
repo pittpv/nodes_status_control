@@ -69,6 +69,9 @@ echo -e " "
 if [ -f ~/.script_initialized ]; then
     rm ~/.script_initialized
 fi
+if [ -f ~/create_validator_script.sh ]; then
+    rm ~/create_validator_script.sh
+fi
 
 # Проверка первого запуска (новая версия)
 if [ ! -f ~/.2nd_script_initialized ]; then
